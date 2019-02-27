@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Ejemplos Angular</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item m-1" *ngFor="let sample of samples; let i=index">
+        <button class="btn btn-outline-light my-2 my-sm-0" (click)="showSample(i)">{{sample}}</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<span [ngSwitch]="currentSample">
+  <p *ngSwitchCase="0">
+    <app-apod></app-apod>
+  </p>
+  <p *ngSwitchCase="1">
+      <app-restsample></app-restsample>
+  </p>
+  <p *ngSwitchCase="2">
+      <app-herolist></app-herolist>
+  </p>
+  <p *ngSwitchCase="3">
+      <app-calculator></app-calculator>
+  </p>
+  <p *ngSwitchDefault>
+
+  </p>
+</span>

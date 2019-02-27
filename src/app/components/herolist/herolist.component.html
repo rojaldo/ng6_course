@@ -1,0 +1,6 @@
+<div class="container">
+  <app-form (signal)="addHero($event)"></app-form>
+  <app-list [heroes]="heroes" (remove)="removeHero($event)" (rating)="rateHero($event)"></app-list>
+</div>
+
+{{heroes | json}}

@@ -1,0 +1,32 @@
+<div class="input-group m-2">
+  <div class="container">
+    <div class="form-group row">
+      <div class="col-sm-1-12">
+        <label for="">Nombre</label>
+        <input type="text" class="form-control" [(ngModel)]="newHeroName" id="exampleInputAmount" placeholder="Nombre del héroe">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-1-12">
+        <label for="">Descripción</label>
+        <input type="text" class="form-control" [(ngModel)]="newHeroDescription" id="exampleInputAmount" placeholder="Descripción del héroe">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-1-12">
+        <label for="">Estatura</label>
+        <input type="number"  class="form-control" [(ngModel)]="newHeroHeight" id="exampleInputAmount" placeholder="Descripción del héroe">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-1-12">
+        <ngb-rating [(rate)]="heroRate"></ngb-rating>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-1-12">
+        <button type="submit" class="btn btn-primary" (click)="addHero()">Añadir</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1 class="display-3">{{result.title}}</h1>
+  <p class="lead">{{result.date}}</p>
+  <hr class="my-2">
+  <img [src]="result.url" alt="">
+  <p>{{result.explanation}}</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" [href]="result.hdurl" role="button">Descargar</a>
+  </p>
+</div>
