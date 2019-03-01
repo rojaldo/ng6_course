@@ -23,14 +23,16 @@ import { DateApodComponent } from './components/date-apod/date-apod.component';
 import { TabsApodComponent } from './components/tabs-apod/tabs-apod.component';
 import { FormValidationComponent } from './components/form-validation/form-validation.component';
 import {UIRouterModule} from "@uirouter/angular";
+import { TrivialComponent } from './trivial/trivial.component';
 
 const formState = { name: 'form', url: '/form',  component: FormValidationComponent };
 const apodState = { name: 'apod', url: '/apod',  component: TabsApodComponent };
 const beerState = { name: 'beers', url: '/beers',  component: RestsampleComponent };
 const heroState = { name: 'heroes', url: '/heroes',  component: HerolistComponent };
 const calculatorState = { name: 'calculator', url: '/calculator',  component: CalculatorComponent };
+const trivialState = { name: 'trivial', url: '/trivial',  component: TrivialComponent };
 
-const statesArray = [formState, apodState, beerState, heroState, calculatorState];
+const statesArray = [trivialState, formState, apodState, beerState, heroState, calculatorState];
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ const statesArray = [formState, apodState, beerState, heroState, calculatorState
     ApodComponent,
     DateApodComponent,
     TabsApodComponent,
-    FormValidationComponent
+    FormValidationComponent,
+    TrivialComponent
   ],
   imports: [
     BrowserModule, NgbModule,

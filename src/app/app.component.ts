@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'sample';
   myvar = true;
-  statesStrings = ['form', 'apod', 'beers', 'heroes', 'calculator'];
-  samples: string[] = ['Formulario', 'Apod', 'Cervezas', 'Lista de héroes', 'Calculadora'];
+  statesStrings = ['trivial', 'form', 'apod', 'beers', 'heroes', 'calculator'];
+  samples: string[] = ['Trivial', 'Formulario', 'Apod', 'Cervezas', 'Lista de héroes', 'Calculadora'];
   currentSample: number = 0;
 
   showSample(index: number) {

@@ -25,7 +25,7 @@ export class ApodComponent implements OnInit, OnChanges {
   }
 
   handleSelect() {
-    let url = 'https://api.nasa.gov/planetary/apod?api_key=tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
+    let url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     url += '&date=' + this.date.year + '-' +
       this.date.month + '-' +
       this.date.day;
@@ -49,7 +49,7 @@ export class ApodComponent implements OnInit, OnChanges {
 
   getApiInfo(url?: string) {
     if (!url) {
-      url = 'https://api.nasa.gov/planetary/apod?api_key=tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
+      url = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
     }
     this.service.getRequest(url).subscribe(
       data => this.processResult(data),
