@@ -1,10 +1,20 @@
-<div class="jumbotron">
-  <h1 class="display-3">{{result.title}}</h1>
-  <p class="lead">{{result.date}}</p>
-  <hr class="my-2">
-  <img [src]="result.url" alt="">
-  <p>{{result.explanation}}</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" [href]="result.hdurl" role="button">Descargar</a>
-  </p>
+<div *ngIf="!responded">
+  Cargando datos...
 </div>
+<div *ngIf="responded">
+  <div class="jumbotron">
+    <h1 class="display-3">{{result.title}}</h1>
+    <p class="lead">{{result.date}}</p>
+    <hr class="my-2">
+    <img *ngIf="result.media_type === 'image'" [src]="result.url" alt="">
+    <div [innerHtml]="getVideo(result.url)" *ngIf="result.media_type === 'video'"></div>
+    <youtube-player *ngIf="result.media_type === 'video'" [videoId]="getURL(result.url)">
+    </youtube-player>
+    <p>{{result.explanation}}</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" [href]="result.hdurl" role="button">Descargar</a>
+    </p>
+  </div>
+
+</div>
+{{result | json}}

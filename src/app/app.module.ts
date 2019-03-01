@@ -17,6 +17,20 @@ import { RestsampleComponent } from './components/restsample/restsample.componen
 import { HttpClientModule } from '@angular/common/http';
 import { RequestService } from './services/request.service';
 import { ApodComponent } from './components/apod/apod.component';
+import { YoutubePlayerModule } from 'ngx-youtube-player';
+import { EmbedVideo } from 'ngx-embed-video';
+import { DateApodComponent } from './components/date-apod/date-apod.component';
+import { TabsApodComponent } from './components/tabs-apod/tabs-apod.component';
+import { FormValidationComponent } from './components/form-validation/form-validation.component';
+import {UIRouterModule} from "@uirouter/angular";
+
+const formState = { name: 'form', url: '/form',  component: FormValidationComponent };
+const apodState = { name: 'apod', url: '/apod',  component: TabsApodComponent };
+const beerState = { name: 'beers', url: '/beers',  component: RestsampleComponent };
+const heroState = { name: 'heroes', url: '/heroes',  component: HerolistComponent };
+const calculatorState = { name: 'calculator', url: '/calculator',  component: CalculatorComponent };
+
+const statesArray = [formState, apodState, beerState, heroState, calculatorState];
 
 @NgModule({
   declarations: [
@@ -29,10 +43,16 @@ import { ApodComponent } from './components/apod/apod.component';
     FormComponent,
     HeightPipe,
     RestsampleComponent,
-    ApodComponent
+    ApodComponent,
+    DateApodComponent,
+    TabsApodComponent,
+    FormValidationComponent
   ],
   imports: [
-    BrowserModule, NgbModule, FormsModule, HttpClientModule
+    BrowserModule, NgbModule,
+    FormsModule, HttpClientModule,
+    YoutubePlayerModule, EmbedVideo.forRoot(),
+    UIRouterModule.forRoot({ states: statesArray, useHash: true })
   ],
   providers: [CalculatorService, HeroService, RequestService],
   bootstrap: [AppComponent]
